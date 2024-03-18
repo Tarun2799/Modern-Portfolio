@@ -1,21 +1,22 @@
-var t1 = gsap.timeline()
+// we need structure
+// h1
+//     span
+//         span
+//             text
 
-t1.to("#fs", {
-    height: 0,
-    duration: 2,
-    ease: Expo.easeInOut
-})
-.to("#elem", {
-    height: "100%" ,
-    duration: 2,
-    // delay: 2,
-    delay: -2,
-    // delay: 0,
-    ease: Expo.easeInOut
-})
-.to("#white", {
-    height: "100%" ,
-    duration: 2,
-    delay: -1.6,
-    ease: Expo.easeInOut
-})
+// humme bs jahan bhi effect lganaa hai bs add: <h1 class="reveal">Creative</h1>
+
+document.querySelectorAll(".reveal")
+    .forEach(function(elem){
+        let spanParent = document.createElement("span");
+        let spanChild = document.createElement("span");
+
+        spanParent.classList.add("parent");
+        spanChild.classList.add("child");
+
+        spanChild.textContent = elem.textContent;
+        spanParent.appendChild(spanChild);
+
+        elem.innerHTML= "";
+        elem.appendChild(spanParent);
+    })
