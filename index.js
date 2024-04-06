@@ -1,3 +1,4 @@
+
 function revealToSpan(){
     document.querySelectorAll('.reveal')
     .forEach(function(elem){
@@ -35,6 +36,7 @@ function valueSetters(){
 
 }
 
+
 function loaderAnimation(){
     var tl = gsap.timeline();
     
@@ -59,17 +61,18 @@ function loaderAnimation(){
     })
     tl.to("#green",{
         // bottom: 100,
-        height:"100vh",
+        height:"100%",
+        top: 0,
         duration: 1,
-        delay:-1,
-        ease: Circ.easeInOut,
+        delay:-1.49,
+        ease: Expo.out,
     })
     tl.to("#green",{
-        top: 0,
-        height: "0vh",
-        duration: .5,
-        // delay: .1,
-        ease: Circ.easeInOut,
+        // top: 0,
+        height: "0%",
+        duration: 1,
+        delay: -.85,
+        ease: Expo.out,
         onComplete: function(){
             animateHomepage();
         }
@@ -87,7 +90,6 @@ function animateSvg(){
     })
 
 }
-
 
 function animateHomepage(){
 
@@ -116,6 +118,47 @@ function animateHomepage(){
     })
 }
 
+function locoInitialize(){
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main'),
+        smooth: true
+    });
+}
+
+function cardHoverEffect(){
+    document.querySelectorAll(".container")
+    .forEach(function (cnt){
+        let showingImage;
+        cnt.addEventListener("mousemove", function(dets){
+            // console.log();
+            // console.log(document.querySelector("#cursor").children[dets.target.dataset.index]);
+            document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
+            showingImage = dets.target;
+            document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
+            showingImage.style.filter = "grayscale(1)";
+
+            document.querySelector("#work").style.backgroundColor = "#"+dets.target.dataset.color;
+
+        })
+
+        cnt.addEventListener("mouseleave", function(dets){
+            document.querySelector("#cursor").children[showingImage.dataset.index].style.opacity = 0;
+            // document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate1(${dets.clientX}px, ${dets.clientY}px)`;
+            showingImage.style.filter = "grayscale(0)";
+
+            document.querySelector("#work").style.backgroundColor = "#F2F2F2";
+
+
+        })
+    })
+}
+
+
+
 revealToSpan();
 valueSetters();
 loaderAnimation();
+locoInitialize();
+cardHoverEffect();
+// // animateSvg();
+// animateHomepage();
