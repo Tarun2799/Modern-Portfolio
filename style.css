@@ -413,7 +413,7 @@ path, polyline{
 }
 
 #cursor{
-    position: relative;
+    position: fixed;
     width: 17vw;
     top: 0;
     left: 0;
@@ -436,7 +436,7 @@ path, polyline{
 #cursor .crow{
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 20px;
     width: 100%;
     padding: .7vw;
 }
@@ -590,7 +590,7 @@ path, polyline{
 #seeplay button:hover{
     color: #111;
     background-color: #fff;
-    transition: opacity .6s;
+    transition: all linear .6s;
 }
 
 /* #temp{
@@ -722,4 +722,138 @@ path, polyline{
 .arr-rows .img-visit img:hover{
     transform: rotate(-45deg);
     transition: cubic-bezier(0.19, 1, 0.22, 1) .3s;
+}
+
+
+#ftr{
+    width: 100%;
+    background-color: #253B39;
+    padding: 0 7vw;
+}
+
+#ftr-heading{
+    padding-top: 10vw ;
+
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 6vw;
+    font-weight: 500;
+    line-height: 1;
+    position: relative;
+}
+
+/* #ftr-heading #bg::before{
+    content: '';
+} */
+
+#ftr-ar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#my-arr{
+    position: absolute;
+    left: 0;
+}
+
+#ftr-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#seeplay1{
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#seeplay1 button{
+    font-size: 1.5vw;
+    font-weight: 600;
+    border-radius: 3rem;
+    border: 1px solid #fff;
+    padding: 1.8vw 12vw;
+    color: #fff;
+    background-color: transparent;
+}
+
+#seeplay1 button span{
+    font-family: mazius;
+}
+
+#seeplay1 button:hover{
+    color: #111;
+    background-color: #fff;
+    transition: all linear .6s;
+}
+
+#handles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
+
+
+.handle{
+    border-top: 1px solid #fff;
+    padding: 1vw .2vw;
+    width: 20%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.handle:hover{
+    background-color: #14CF93;
+    transition: all linear .2s;
+    padding: 1vw .6vw;
+    /* box-sizing: border-box; */
+
+}
+
+.name>h3{
+    font-weight: 300;
+    font-size: 1.2vw;
+}
+
+.name>h4{
+    font-weight: 500;
+    font-size: .8vw;
+    color: #616161;
+}
+
+.icon{
+    background-color: #FCFAF8;
+    padding: .4vw .5vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon>img{
+    width: 1.2vw;
+}
+
+
+#credits{
+    margin-top: 7vw;
+    padding-bottom: 5vw;
+    color: #959594;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#credits p>span, #credits .side{
+    text-decoration: underline;
 }
