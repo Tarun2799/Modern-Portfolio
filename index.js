@@ -84,7 +84,7 @@ function animateSvg(){
 
     gsap.to("#Visual>g>g>path, #Visual>g>g>polyline", {
         strokeDashoffset: 0,
-        duration:2,
+        duration:1.7,
         ease: Expo.easeInOut,
         // delay: 5
     })
@@ -104,13 +104,13 @@ function animateHomepage(){
     .to("#home .parent .child", {
         y: 0,
         stagger: .1,
-        duration: 1.5,
+        duration: 1,
         ease: Expo.easeInOut
     })
     .to("#home .row img", {
         opacity:1,
         // duration: 1.4,
-        delay: -.5,
+        delay: -.4,
         ease: Expo.easeInOut,
         onComplete: function(){
             animateSvg();
@@ -132,9 +132,10 @@ function cardHoverEffect(){
         cnt.addEventListener("mousemove", function(dets){
             // console.log();
             // console.log(document.querySelector("#cursor").children[dets.target.dataset.index]);
-            document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
             showingImage = dets.target;
             document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
+            document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
+
             showingImage.style.filter = "grayscale(1)";
 
             document.querySelector("#work").style.backgroundColor = "#"+dets.target.dataset.color;
@@ -146,7 +147,7 @@ function cardHoverEffect(){
             // document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate1(${dets.clientX}px, ${dets.clientY}px)`;
             showingImage.style.filter = "grayscale(0)";
 
-            document.querySelector("#work").style.backgroundColor = "#F2F2F2";
+            document.querySelector("#work").style.backgroundColor = "#d0d0d048";
 
 
         })
@@ -176,3 +177,20 @@ console.log(div); // 2 items are coming
 
 let bg = document.getElementById('bg');
 bg.before(div);
+
+
+// gsap.to(".img-container:nth-child(1)",{
+//     duration: 1,
+//     // transform: translateX(-40%, -8%),
+//     x: -30,
+//     rotate: 0,
+//     // opacity:0,
+    
+//     scrollTrigger: ".img-container:nth-child(3)"
+//     // scrollTrigger:{
+//     //     trigger: " #image-section",
+//     //     scroller: "body",
+//     //     markers: true,
+//     //     start: "top 30%"
+//     // }
+// })
