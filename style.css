@@ -144,24 +144,32 @@ html, body{
     /* margin-top: 5vh; */
     width: 100%;
     height: 100px;
+    position: relative;
+    cursor: pointer;
 }
 
  #nav a {
     position: relative;
     text-decoration: none;
+    display: inline-block;
     text-transform: uppercase;
     font-weight: 300;
     font-size: 12px;
+    /* z-index: 10; */
     color: #000;
 }
 
-#nav a .line{
+#nav>a .line{
     position: absolute;
     bottom: 0;
     display: inline-block;
     /* width: 100%; kuch galtiyaan dundhne se hi milti hai or mind chlane par majboor kar deti hai😂 */
     height: 1px;
     background-color: #000;
+    /* z-index: -1; */
+    /* pointer-events: none; */
+    /* user-select: none; */
+    /* cursor: pointer; */
 }
 
 #line1{
@@ -280,6 +288,7 @@ path, polyline{
     z-index: 10;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1.2s;
     /* background-color: #4ed3a991 */
+    cursor: pointer;
 }
 
 #img-right .img-container:hover{
@@ -441,6 +450,7 @@ path, polyline{
 .container{
     overflow: hidden;
     border-radius: 3.2rem;
+    cursor: pointer;
 }
 
 .container img{
@@ -983,6 +993,7 @@ path, polyline{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .handle:hover{
@@ -990,6 +1001,7 @@ path, polyline{
     transition: all linear .2s;
     padding: 1vw .6vw;
     /* box-sizing: border-box; */
+    cursor: pointer;
 
 }
 
@@ -1030,3 +1042,423 @@ path, polyline{
 #credits p>span, #credits .side{
     text-decoration: underline;
 }
+
+
+
+
+
+/* Mobile First Approach */
+@media (max-width: 600px) {
+
+    
+
+    #loader h1 {
+        font-size: 6.5vw;
+        width: 90%;
+    }
+    #center-heading{
+        height: 6vh;
+    }
+
+    #home #nav {
+        padding: 0 5vw;
+        height: 70px;
+    }
+
+    #nav a {
+        font-size: 10px;
+    }
+
+    #nav a .line {
+        height: 0.5px;
+    }
+
+    .row {
+        padding: 1vh 8vw;
+        /* gap: 2px; */
+    }
+    .row .text h5{
+        font-size: 7px;
+    }
+
+    .row h1 {
+        font-size: 10vw;
+    }
+
+    .row img{
+        margin-top: 0.5rem;
+        height: 2rem;
+    }
+
+
+    #image-section {
+        flex-direction: column;
+        padding: 3vw 4vw;
+    }
+
+    #img-left {
+        width: 100%;
+    }
+
+    #img-left h1{
+        width: 9rem;
+        font-size: 2vh;
+        /* line-height: .6rem; */
+        /* font-weight: 600; */
+    }
+
+    #img-right {
+        padding-top: 5rem;
+        padding-left: 2.5rem;
+        /* width: 100%; */
+        /* height: auto; */
+    }
+
+    #img-right .img-container {
+        width: 75%;
+        height: 15rem;
+        border-radius: 1rem;
+
+        /* height: auto; */
+    }
+
+
+    #work {
+        padding-top: 15vh;
+        padding-bottom: 5vh;
+    }
+
+    #workrow {
+        padding: 0 5vw;
+    }
+
+    #work::before{
+        top: -40px;
+    }
+
+    #workrow h1 {
+        font-size: 2rem;
+    }
+
+    #images, #images1 {
+        padding: 0 1.5rem;
+    }
+    #images1 img{
+        height: 7rem;
+    }
+
+    #images #imgs-work .container{
+        border-radius: 2rem;
+    }
+
+    #images #imgs-work .container .cnt2{
+        border-radius: .1rem;
+    }
+
+
+    .container img {
+        width: 100%;
+    }
+
+    #cursor {
+        width: 25vw;
+    }
+
+    #seeplay .spn {
+        padding: 1vh 20vw;
+        font-size: 3vw;
+    }
+
+    #work::after{
+        bottom: -50px;
+    }
+
+    #arr-sections {
+        padding: 15px;
+    }
+
+    #arr-left h2 {
+        font-size: 8px; /* Adjust as needed */
+        font-weight: bolder;
+    }
+
+    #arr-left img {
+        width: 20vw;
+        height: 8vh;
+        border-radius: 10px;
+    }
+
+    #arr-left h5 {
+        font-size: 8px;
+    }
+
+    #arr-right{
+        width: 60vw;
+    }
+
+    .arr-rows h5, .arr-rows h1 {
+        font-size: 8px; /* Adjust as needed */
+    }
+
+    .arr-rows .img-visit{
+        width: 1.7rem;
+        padding:  14px 2px;
+        height: 0.4rem;
+    }
+
+    .arr-rows .img-visit img{
+        width: 0.8rem;
+    }
+
+    #archive h5{
+        font-size: larger;
+    }
+
+    #archive .archive-section a{
+        font-size: 1.2vh;
+
+    }
+
+    .arc-visit img{
+        height: 8px;
+    }
+
+    #ftr-heading {
+        font-size: 4vw;
+    }
+
+    #seeplay1 span {
+        padding: 1.5vw 8vw;
+        font-size: 7px;
+        font-weight: 400;
+    }
+
+    #handles h3{
+        font-size: 6px;
+        font-weight: 400;
+    }
+
+    #handles h4{
+        font-size: 5px;
+    }
+
+    #credits {
+        padding: 10px;
+    }
+    
+    #credits p {
+        font-size: 8px;
+    }
+    
+    #credits .side {
+        font-size: 8px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    #img-right .img-container {
+        width: 85%;
+        height: 14rem;
+        border-radius: 1rem;
+    }
+
+    .row h1 {
+        font-size: 8vw;
+    }
+    
+}
+
+
+
+/* Tablet devices (min-width: 601px and max-width: 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #loader h1 {
+        font-size: 6vw;
+    }
+
+    #home #nav {
+        padding: 0 4vw;
+        height: 80px;
+    }
+
+    #nav a {
+        font-size: 12px;
+    }
+
+    #nav a .line {
+        height: 1px;
+    }
+
+    .row {
+        padding: 1vh 6vw;
+    }
+
+    .row .text h5{
+        font-size: 10px;
+    }
+
+    .row h1 {
+        /* word-spacing: 10px; */
+        font-size: 12vw;
+    }
+
+    .row img{
+        margin-top: 0.7rem;
+        height: 3rem;
+    }
+
+    #image-section {
+        flex-direction: row;
+        padding: 2vw 3vw;
+    }
+
+    #img-left {
+        width: 50%;
+    }
+
+    #img-left h1 {
+        width: 12rem;
+        font-size: 2.5vh;
+    }
+
+    #img-right {
+        padding-top: 1.5rem;
+        padding-left: 2rem;
+    }
+
+    #img-right .img-container {
+        width: 65%;
+        height: 17rem;
+        border-radius: 1rem;
+    }
+
+    #work {
+        padding-top: 12vh;
+        padding-bottom: 4vh;
+    }
+
+    #workrow {
+        padding: 0 4vw;
+    }
+
+    #work::before {
+        top: -50px;
+    }
+
+    #workrow h1 {
+        font-size: 2.5rem;
+    }
+
+    #images, #images1 {
+        padding: 0 2rem;
+    }
+
+    #images #imgs-work .container {
+        border-radius: 2rem;
+    }
+    
+    #images #imgs-work .container .cnt2 {
+        border-radius: 0.2rem;
+    }
+    
+    .container img {
+        width: 100%;
+        cursor: pointer;
+    }
+
+    #cursor {
+        width: 20vw;
+    }
+
+    #seeplay .spn {
+        padding: 1.5vh 18vw;
+        font-size: 4vw;
+    }
+
+    #work::after {
+        bottom: -75px;
+    }
+
+    #arr-sections {
+        padding: 20px;
+    }
+
+    #arr-left h2 {
+        font-size: 10px;
+        font-weight: bolder;
+    }
+
+    #arr-left img {
+        width: 25vw;
+        height: 10vh;
+        border-radius: 10px;
+    }
+
+    #arr-left h5 {
+        font-size: 10px;
+    }
+
+    #arr-right {
+        width: 50vw;
+    }
+
+    .arr-rows h5, .arr-rows h1 {
+        font-size: 10px;
+    }
+
+    .arr-rows .img-visit {
+        width: 2rem;
+        padding: 15px 0px;
+        height: 0.6rem;
+    }
+
+    .arr-rows .img-visit img {
+        width: 0.9rem;
+    }
+
+    #archive h5 {
+        font-size: larger;
+    }
+
+    #archive .archive-section a {
+        font-size: 1.5vh;
+    }
+
+    .arc-visit img{
+        height: 8px;
+    }
+
+    #ftr-heading {
+        font-size: 5vw;
+    }
+
+    #seeplay1 span {
+        padding: 2vw 13vw;
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    #handles h3 {
+        font-size: .6rem;
+        font-weight: 400;
+    }
+
+    #handles h4 {
+        font-size: .51rem;
+    }
+
+    #credits {
+        padding: 15px;
+    }
+    
+    #credits p {
+        font-size: .9rem;
+    }
+    
+    #credits .side {
+        font-size: .8rem;
+    }
+}
+

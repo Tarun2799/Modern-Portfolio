@@ -144,7 +144,7 @@ function cardHoverEffect(){
 
         cnt.addEventListener("mouseleave", function(dets){
             document.querySelector("#cursor").children[showingImage.dataset.index].style.opacity = 0;
-            // document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate1(${dets.clientX}px, ${dets.clientY}px)`;
+            // document.querySelector("#cursor").children[dets.target.dataset.index].style.transform =`translate(${dets.clientX}px, ${dets.clientY}px)`;
             showingImage.style.filter = "grayscale(0)";
 
             document.querySelector("#work").style.backgroundColor = "#d0d0d048";
